@@ -62,7 +62,7 @@ public class Formatter
     {
         foreach (var paragraph in new ParagraphReader(sourcePath).Paragraphs)
         {
-            if (paragraph.ToString().GetMatch(@"\[(\d+)\] +(.+)", out var match))
+            if (paragraph.ToString().GetMatch(@"^\s*\[(\d+)\] +(.+)", out var match))
                 Comments[match.Groups[1].Value.ToInt32() ?? -1] = new(match.Groups[2].Value.ToBytes());
             else
                 Paragraphs.Add(paragraph);

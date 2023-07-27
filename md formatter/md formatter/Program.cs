@@ -1,10 +1,15 @@
-﻿using md_formatter;
+﻿namespace md_formatter;
 
-while (true)
+internal static class Program
 {
-    var fileName = Console.ReadLine() ?? "";
-    if (fileName.GetMatch(@"^""(.+)""$", out var match))
-        fileName = match.Groups[1].Value;
-    var _ = new Formatter(fileName, fileName);
-    Console.WriteLine();
+
+    /// <summary>
+    /// 应用程序的主入口点。
+    /// </summary>
+    [STAThread]
+    private static void Main()
+    {
+        //testInfo.Show();
+        Application.Run(new MainForm());
+    }
 }

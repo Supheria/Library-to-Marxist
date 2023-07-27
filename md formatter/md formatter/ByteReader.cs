@@ -13,7 +13,7 @@ public class ByteReader
     {
         if (!File.Exists(filePath))
         {
-            Console.WriteLine($"could not open file: {filePath}");
+            MessageBox.Show($"could not open file: {filePath}");
             return;
         }
         using var file = File.OpenRead(filePath);
